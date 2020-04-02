@@ -10,7 +10,7 @@ class ProductManagerTest {
         Repository repository = new Repository();
         ProductManager manager = new ProductManager(repository);
         Product[] expected = {new Book(3, "Autobiography", 400, "Helmut Newton")};
-        Product[] actual = manager.searchBy("Helmut Newton");
+        Product[] actual = manager.searchBy("helmut newton");
         assertArrayEquals(expected, actual);
     }
 

@@ -8,10 +8,8 @@ public class Repository {
             new Smartphone(2, "Galaxy A50", 10000, "Samsung"),
             new Smartphone(3, "P20", 30000, "Huawei")};
 
-
     Smartphone smartphone = new Smartphone(4, "7 Pro", 45000, "OnePlus");
     Book book = new Book(4, "The Raven", 100, "Edgar Allan Poe");
-
 
     public void saveProduct(Product item) {
         Product[] newRepo = new Product[repo.length + 1];
@@ -22,7 +20,6 @@ public class Repository {
         newRepo[lastIndex] = item;
         repo = newRepo;
     }
-
 
     public Product[] findAll() {
         for (int i = 0; i < repo.length; i++) {
@@ -37,7 +34,9 @@ public class Repository {
                 b = true;
                 break;
             }
+
         }
+
         if (b) {
             Product[] newRepo = new Product[repo.length - 1];
             int index = 0;
@@ -46,8 +45,12 @@ public class Repository {
                     newRepo[index] = item;
                     index++;
                 }
+
             }
+
             repo = newRepo;
         }
+
     }
+
 }
