@@ -15,9 +15,7 @@ public class Repository {
 
     public void saveProduct(Product item) {
         Product[] newRepo = new Product[repo.length + 1];
-        for (int i = 0; i < repo.length; i++) {
-            newRepo[i] = repo[i];
-        }
+        System.arraycopy(repo, 0, newRepo,0, repo.length);
         int lastIndex = newRepo.length - 1;
         newRepo[lastIndex] = item;
         repo = newRepo;
@@ -25,20 +23,18 @@ public class Repository {
 
 
     public Product[] findAll() {
-        for (int i = 0; i < repo.length; i++) {
-        }
         return repo;
     }
 
     public void removeByID(int id) {
-        boolean b = false;
+        boolean exist = false;
         for (Product item : repo) {
             if (item.getId() == id) {
-                b = true;
+                exist = true;
                 break;
             }
         }
-        if (b) {
+        if (exist) {
             Product[] newRepo = new Product[repo.length - 1];
             int index = 0;
             for (Product item : repo) {

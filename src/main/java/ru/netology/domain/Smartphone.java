@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode
+@EqualsAndHashCode (callSuper = true)
 public class Smartphone extends Product{
     private String manufacturer;
     public Smartphone(int id, String name, int price, String manufacturer) {
